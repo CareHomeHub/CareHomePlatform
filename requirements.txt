@@ -1,0 +1,5 @@
+py2neo
+pytest
+scipy
+spacy
+pep8
