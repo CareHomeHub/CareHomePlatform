@@ -73,10 +73,15 @@ for item in data:
             merge (b)-[:Has_Registration_Status]->(a) RETURN a"
     dat = graph.run(queryStr)
     
-    queryStr = "merge (a :geodata { postcode: '"+item["postcode"]["result"]["postcode"]+"'})\
-            merge (b :LOC {loc_ref:'"+item['loc']['locationId']+"'} )\
-            merge (b)-[:Has_geodata]->(a) RETURN a"
-    dat = graph.run(queryStr)
+    queryStr = "merge (a :geodata { postcode: '"+item["postcode"]["result"]["postcode"]+"'}) RETURN a"
+    
+    
+    
+    from py2neo import Graph
+    graph = Graph("bolt://localhost:7687")
+    
+    def ingestData(qryString)
+        graph.run(queryStr)
     
     
 

@@ -11,3 +11,8 @@ def find_loc_info(ref='X99XX'):
         return {'Error': f"No Location reference found for {ref}"}
     
     return resp.json()
+
+
+
+ans = find_loc_info("1-134558905")
+print (ans)
