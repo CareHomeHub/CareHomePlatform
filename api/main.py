@@ -3,7 +3,7 @@ import logging
 import requests
 import pandas as pd
 # from .gdb import load_data as seed_db 
-from .gdb import magic_cypher as seed_magic 
+# from .gdb import magic_cypher as seed_magic 
 # from .gdb_neo4j import seed_loc_data as seed_loc
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
@@ -13,7 +13,7 @@ from py2neo import Graph
 
 # seed_db()
 # seed_loc()
-seed_magic()
+# seed_magic()
 
 data = [
     {
