@@ -1,3 +1,6 @@
+""" 
+main.py
+"""
 import json
 import logging
 import requests
@@ -374,15 +377,10 @@ ch.setLevel(logging.DEBUG)
 
 # create formatter
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
 # add formatter to ch
 ch.setFormatter(formatter)
-
 # add ch to logger
 logger.addHandler(ch)
-
-
-
 
 
 app = FastAPI(
@@ -430,9 +428,8 @@ async def read_data():
     return data
 
 
-
 @app.get("/providers", response_model= List[Item], responses={404: {"model": Message}}, tags=["providers"])
-async def read_loc():
+async def read_prov():
     logger.info("logging from the /provider")
     return data
     

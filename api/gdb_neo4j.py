@@ -1,3 +1,7 @@
+""" 
+gdb_neo4j.py
+Neo4j features
+"""
 from neo4j import GraphDatabase
 import json
 

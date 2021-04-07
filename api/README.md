@@ -1,6 +1,5 @@
 # CareHomeInterface
 
-
 ## CareHomeHub API
    To build :  docker build -t chi_api .
    

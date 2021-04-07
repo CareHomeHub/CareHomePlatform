@@ -1,3 +1,7 @@
+""" 
+gdb.py
+Neo4j features
+"""
 from py2neo import Graph
 import json 
 import requests
