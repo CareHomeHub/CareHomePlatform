@@ -61,14 +61,14 @@ Todo:
 #         return {"result":  "OUT"}
     
    
-# ans = findByRef(4, [1,2,3,4]) 
+# ans = findByRef(4, [1,2,3,4])
 # print(f"{ans['result']}")
 
-# ans = findByRef(5, [1,2,3,4]) 
+# ans = findByRef(5, [1,2,3,4])
 # print(f"{ans['result']}")
 
 
-with open('mocks/CQC_data.json') as f: 
+with open('mocks/CQC_data.json') as f:
     cqc_data = json.load(f)
 
 def getGeoData(cqc_data):
@@ -96,7 +96,7 @@ def getGeoData(cqc_data):
             geo["admin_ward"] = element['postcode']['result']['admin_ward']
             result.append(geo)
             
-        else: 
+        else:
             cnt += 1
             geo['location'] = element['loc']['locationId']
             geo["postcode"] = "NO POSTCODE DETAILS"
@@ -108,7 +108,7 @@ def getGeoData(cqc_data):
 
 def getRatings(cqc_data):
     cnt = 0
-    count = len(cqc_data)
+    # count = len(cqc_data)
     # print(count)
     result = []
     for element in cqc_data:
@@ -131,12 +131,11 @@ def getRatings(cqc_data):
             doc["Effective"] = element['loc']['currentRatings']['overall']['keyQuestionRatings'][4]['rating']
             result.append(doc)
         else:
-            print(f"currentRatings missing")
+            print(f"currentRatings: {cnt} missing")
             # print(f"cqc_data ratings overall: {element['loc']}")
             
-    # print(f"\n\n\nResult (getRatings) :\n\ {result}")  
-    return result      
-            
+    # print(f"\n\n\nResult (getRatings) :\n\ {result}")
+    return result            
 
             
 geodata = getGeoData(cqc_data)
