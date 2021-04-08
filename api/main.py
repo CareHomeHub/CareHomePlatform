@@ -354,6 +354,8 @@ class Item(BaseModel):
     lng: float
 
     class Config:
+        """ [summary]
+        """
         orm_mode = True
 
 

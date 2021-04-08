@@ -27,8 +27,8 @@ import json
 #         return {"result":  "IN"}
 #     else:
 #         return {"result":  "OUT"}
-    
-   
+
+
 # ans = findByRef(4, [1,2,3,4])
 # print(f"{ans['result']}")
 
@@ -99,19 +99,17 @@ def getRatings(cqc_data):
         else:
             print(f"currentRatings: {cnt} missing")
             # print(f"cqc_data ratings overall: {element['loc']}")
-            
+
     # print(f"\n\n\nResult (getRatings) :\n\ {result}")
     return result
 
-            
+
 geodata = getGeoData(cqc_data)
 ratingdata = getRatings(cqc_data)
 
 with open("geodata.json", "w") as write_file:
         json.dump(geodata, write_file)
-        
-    
+
+
 with open("ratingdata.json", "w") as write_file:
         json.dump(ratingdata, write_file)
-
-
