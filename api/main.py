@@ -1,7 +1,3 @@
-"""main.py
-What it does goes here
-"""
-
 import logging
 # from .gdb import load_data as seed_db
 # from .gdb import magic_cypher as seed_magic

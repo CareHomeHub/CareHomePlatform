@@ -1,7 +1,3 @@
-""" test_lgc.py
-Test features
-"""
-
 def test_lgc_adding():
     ans = 1 + 1
     exp = 2

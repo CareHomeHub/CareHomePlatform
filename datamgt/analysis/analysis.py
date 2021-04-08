@@ -1,7 +1,3 @@
-""" analysis.py
-Pandas analysis from csv
-"""
-
 import pandas as pd
 
 df = pd.read_csv("location_rating.csv")
