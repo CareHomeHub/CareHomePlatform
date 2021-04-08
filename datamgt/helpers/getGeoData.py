@@ -25,8 +25,8 @@ def getGeoData(cqc_data):
             geo["admin_county"] = element['postcode']['result']['admin_county']
             geo["admin_ward"] = element['postcode']['result']['admin_ward']
             result.append(geo)
-            
-        else: 
+
+        else:
             cnt += 1
             geo['location'] = element['loc']['locationId']
             geo["postcode"] = "NO POSTCODE DETAILS"

@@ -31,7 +31,6 @@ Todo:
 
 .. _Google Python Style Guide:
    http://google.github.io/styleguide/pyguide.html
-
 """
 
 
@@ -47,7 +46,7 @@ Todo:
 #     int:Returning value
 
 #    """
-    
+
 #     if ref=="":
 #         # logger.info("No Reference Supplied to findByRef function")
 #         return {"result":  "error1"}
@@ -135,7 +134,7 @@ def getRatings(cqc_data):
             # print(f"cqc_data ratings overall: {element['loc']}")
             
     # print(f"\n\n\nResult (getRatings) :\n\ {result}")
-    return result            
+    return result
 
             
 geodata = getGeoData(cqc_data)

@@ -2,7 +2,7 @@
 
 def getRatings(cqc_data):
     cnt = 0
-    count = len(cqc_data)
+    # count = len(cqc_data)
     # print(count)
     result = []
     for element in cqc_data:
@@ -18,11 +18,8 @@ def getRatings(cqc_data):
             doc["Effective"] = element['loc']['currentRatings']['overall']['keyQuestionRatings'][4]['rating']
             result.append(doc)
         else:
-            print(f"currentRatings missing")
+            print(f"currentRatings {element['loc']} missing")
             print(f"cqc_data ratings overall: {element['loc']}")
-            
-    print(f"\n\n\nResult (getRatings) :\n\ {result}")  
-    return result      
-            
 
-            
+    print(f"\n\n\nResult (getRatings ) :\n\ {result}")
+    return result

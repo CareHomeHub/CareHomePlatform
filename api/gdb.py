@@ -1,7 +1,7 @@
 """ gdb.py
-
 Neo4j features
 """
+
 from py2neo import Graph
 import json
 # import requests
@@ -48,16 +48,16 @@ def load_data():
     for item in data:
         # print(f"{data[0]}")
         # item = data[0]
-        
+
         # print(f"{item['loc']['locationId']}")
-        
-        
+
+
         queryStr = "merge (a :HOME { locationId:'"+item['loc']['locationId']+"', locationName:'"+item['req']['locationName']+"',postalCode:'"+item['loc']['postalCode']+"',providerId:'"+item['loc']['providerId']+"',currentRatings:'"+item['loc']['currentRatings']['overall']['rating']+"'})\
                     merge (b :GEO {postcode:'"+item['postcode']['result']['postcode']+"',primary_care_trust:'"+item['postcode']['result']['primary_care_trust']+"',region:'"+item['postcode']['result']['region']+"',lsoa:'"+item['postcode']['result']['lsoa']+"'} )\
                     merge (a)-[:IS_LOCATED]->(b) RETURN a"
-        dat = graph.run(queryStr)
+        graph.run(queryStr)
         print(f"QueryString : \n{queryStr}")
-        
+
 # load_data()
 
 
@@ -86,7 +86,7 @@ def magic_cypher():
      MERGE (location)-[:Supplies_gacServiceType]->(gacServiceType) ) 
 
     """
-    results = graph.run(query,json=data)
+    graph.run(query,json=data)
 
 
 # MERGE (location)-[:CURRENT_RATING]->(rating :RATING { overall:q.loc.currentRatings.overall.rating }) ON CREATE SET rating.safe = q.loc.currentRatings.keyQuestionRatings[0].rating
@@ -107,7 +107,7 @@ def magic_cypher():
 
     MERGE (n)-[:CURRENT_RATING]->(rate)
     """
-    results = graph.run(setRatingData,json=data1)
+    graph.run(setRatingData,json=data1)
 
 
     with open('app/data/geodata.json') as f:
@@ -131,6 +131,6 @@ def magic_cypher():
     geo.admin_county = q.admin_county, geo.admin_ward = q.admin_ward
     MERGE (n)-[:IS_LOCATED_IN]->(geo)
     """
-    results = graph.run(setGeoData,json=data2)
+    graph.run(setGeoData,json=data2)
 
-    tx = graph.begin()
+    graph.begin()

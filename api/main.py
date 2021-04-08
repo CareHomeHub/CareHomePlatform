@@ -1,18 +1,15 @@
-""" 
-main.py
+""" main.py
+What it does goes here
 """
-import json
+
 import logging
-import requests
-import pandas as pd
-# from .gdb import load_data as seed_db 
-# from .gdb import magic_cypher as seed_magic 
+# from .gdb import load_data as seed_db
+# from .gdb import magic_cypher as seed_magic
 # from .gdb_neo4j import seed_loc_data as seed_loc
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from typing import List
 from pydantic import BaseModel
-from py2neo import Graph
 
 # seed_db()
 # seed_loc()
@@ -399,8 +396,8 @@ async def root():
 async def read_loc():
     logger.info("logging from the /location")
     return data
-    
-    
+
+
 @app.get("/locations/{loc_id}", response_model=Item, responses={404: {"model": Message}}, tags=["locations"])
 async def read_item(loc_id: str):
     logger.info("logging from the /location/{loc_id}")
@@ -432,15 +429,15 @@ async def read_data():
 async def read_prov():
     logger.info("logging from the /provider")
     return data
-    
-    
-@app.get("/providers/{loc_id}", response_model=Item, responses={404: {"model": Message}}, tags=["providers"])
-async def read_item(loc_id: str):
+
+
+@app.get("/providers/{prov_id}", response_model=Item, responses={404: {"model": Message}}, tags=["providers"])
+async def read_prov_sing(prov_id: str):
     logger.info("logging from the /provider/{loc_id}")
     for loc in data:
-        logger.info("reading ID "+loc["loc_id"]+" in the data search logger for "+ loc_id)
-        
-        if loc_id == loc["loc_id"]:
+        logger.info("reading ID "+loc["loc_id"]+" in the data search logger for "+ prov_id)
+
+        if prov_id == loc["loc_id"]:
             return {
             "loc_id": loc["loc_id"],
             "typ": loc["typ"],

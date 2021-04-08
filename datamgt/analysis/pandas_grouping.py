@@ -33,7 +33,7 @@ print(cont)
 # line_chart.add('Chrome',  [None, None, None, None, None, None,    0,  3.9, 10.8, 23.8, 35.3])
 # line_chart.add('IE',      [85.8, 84.6, 84.7, 74.5,   66, 58.6, 54.7, 44.8, 36.2, 26.6, 20.1])
 # line_chart.add('Others',  [14.2, 15.4, 15.3,  8.9,    9, 10.4,  8.9,  5.8,  6.7,  6.8,  7.5])
-# line_chart.render_to_file('line_chart.svg') 
+# line_chart.render_to_file('line_chart.svg')
 
 
 # new_df = df.groupby('Domain','LatestRating')['LatestRating'].counts()
@@ -43,7 +43,7 @@ bar_chart = pygal.Bar(width=1000, height=600,
                             title='versions vs colors',
                             x_title='Domain',
                             y_title='Number')
-versions = []    
+versions = []
 
 for index, row in cont.iteritems():
     versions.append(index[0])

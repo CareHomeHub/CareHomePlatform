@@ -7,7 +7,6 @@ import json
 uri = "bolt://graph_db:7687"
 driver = GraphDatabase.driver(uri, encrypted=False)
 
-from .data import mocks
 
 def get_gdb():
     return driver
