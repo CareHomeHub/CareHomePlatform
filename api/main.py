@@ -356,7 +356,8 @@ class Item(BaseModel):
     lng: float
 
     class Config:
-        """ \single line doc string! """
+        """ [summary]
+        """
         orm_mode = True
 
 
