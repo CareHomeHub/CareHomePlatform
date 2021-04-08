@@ -344,8 +344,6 @@ tags_metadata = [
 ]
 
 class Item(BaseModel):
-    """ [summary]
-    """
     loc_id: str
     typ: str
     name: str
@@ -356,8 +354,6 @@ class Item(BaseModel):
     lng: float
 
     class Config:
-        """ [summary]
-        """
         orm_mode = True
 
 
