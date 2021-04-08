@@ -3,3 +3,7 @@ pytest
 scipy
 spacy
 pep8
+fastapi
+uvicorn
+neo4j-driver
+pandas
