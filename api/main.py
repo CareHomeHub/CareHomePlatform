@@ -1,4 +1,4 @@
-""" main.py
+"""main.py
 What it does goes here
 """
 
@@ -403,7 +403,7 @@ async def read_item(loc_id: str):
     logger.info("logging from the /location/{loc_id}")
     for loc in data:
         logger.info("reading ID "+loc["loc_id"]+" in the data search logger for "+ loc_id)
-        
+
         if loc_id == loc["loc_id"]:
             return {
             "loc_id": loc["loc_id"],
@@ -421,7 +421,7 @@ async def read_item(loc_id: str):
 @app.get("/data", response_model= List[Item], responses={404: {"model": Message}}, tags=["locations"])
 async def read_data():
     logger.info("logging from the /data")
-    data = gdb.getData()
+    data = "data" #gdb.getData()
     return data
 
 

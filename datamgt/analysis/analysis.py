@@ -1,5 +1,5 @@
-"""  analysis.py
-XXXX
+""" analysis.py
+Pandas analysis from csv
 """
 
 import pandas as pd

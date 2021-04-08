@@ -30,6 +30,6 @@ def getGeoData(cqc_data):
             cnt += 1
             geo['location'] = element['loc']['locationId']
             geo["postcode"] = "NO POSTCODE DETAILS"
-        
+
     print(f"RESULT (getGeoData): {result}")
     return result

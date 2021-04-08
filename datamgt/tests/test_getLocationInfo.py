@@ -6,7 +6,7 @@ expected = {'locationId': '1-134558905', 'providerId': '1-102643096', 'organisat
 def test_get_valid_location():
     exp = expected
     act = getLocationInfo.find_loc_info("1-134558905")
-    
+
     assert act == exp, "Error not as expected"
 
 

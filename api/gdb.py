@@ -1,4 +1,5 @@
-""" gdb.py
+"""gdb.py
+
 Neo4j features
 """
 
@@ -91,10 +92,10 @@ def magic_cypher():
 
 # MERGE (location)-[:CURRENT_RATING]->(rating :RATING { overall:q.loc.currentRatings.overall.rating }) ON CREATE SET rating.safe = q.loc.currentRatings.keyQuestionRatings[0].rating
 # ON CREATE SET geodata.nhs_ha = q.postcode.result.nhs_ha, geodata.primary_care_trust = q.postcode.result.primary_care_trust, geodata.lsoa = q.postcode.result.lsoa, geodata.outcode = q.postcode.result.outcode, geodata.ccg = q.postcode.result.ccg, geodata.incode = q.postcode.result.incode
-    
+
     with open('app/data/ratingdata.json') as h:
         data1 = json.load(h)
-    
+
     setRatingData = """
     WITH $json as data
     UNWIND data as q
@@ -116,9 +117,9 @@ def magic_cypher():
     setGeoData = """
     WITH $json as data
     UNWIND data as q
-    
+
     MATCH (n:CQCLocation) where n.id = q.location 
-    
+
     MERGE (geo:GeoData {id:q.location}) ON CREATE
     SET geo.postcode = q.postcode, geo.outcode = q.outcode, geo.country = q.country, geo.nhs_ha = q.nhs_ha, 
     geo.longitude = q.longitude, geo.latitude = q.latitude,geo.eastings = q.eastings,
