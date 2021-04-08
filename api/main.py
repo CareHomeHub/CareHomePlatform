@@ -344,6 +344,8 @@ tags_metadata = [
 ]
 
 class Item(BaseModel):
+    """ [summary]
+    """
     loc_id: str
     typ: str
     name: str
